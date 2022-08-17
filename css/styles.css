@@ -243,6 +243,7 @@ body {
 
 .backdrop.is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -327,8 +328,11 @@ body {
 }
 
 .input-box {
-  position: relative;
   margin-bottom: 10px;
+}
+
+.input-wrapper {
+  position: relative;
 }
 
 .modal-item {
@@ -347,7 +351,7 @@ body {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  padding-left: 43px;
+  padding: 11px 11px 11px 43px;
   transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -356,6 +360,7 @@ body {
   border-radius: 4px;
   padding: 12px 16px;
   width: 100%;
+  min-height: 120px;
   resize: none;
 
   transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -375,8 +380,9 @@ body {
 
 .input-icon {
   position: absolute;
-  top: 29px;
-  left: 12px;
+  top: 50%;
+  left: calc(12 / 448 * 100%);
+  transform: translateY(-50%);
   fill: var(--main-text-color);
 
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -410,6 +416,7 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--accent-color);
+  background-origin: border-box;
   border-radius: 2px;
 }
 
@@ -623,13 +630,13 @@ body {
   line-height: 1.71;
 }
 
-.address .contacts:not(:last-child) {
-  margin-bottom: 9px;
-}
-
 .address .map-link {
   color: #fff;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.address-item {
+  margin-bottom: 9px;
 }
 
 .socials-header {
